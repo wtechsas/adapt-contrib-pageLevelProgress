@@ -1,0 +1,258 @@
+{
+  "type": "object",
+  "$schema": "http://json-schema.org/draft-04/schema",
+  "id": "http://jsonschema.net",
+  "required": false,
+  "globals": {
+    "pageLevelProgress": {
+      "type": "string",
+      "required": true,
+      "title": "Nivel de progreso de la página",
+      "default": "Secciones de página",
+      "inputType": "Text",
+      "validators": [],
+      "translatable": true
+    },
+    "pageLevelProgressIndicatorBar": {
+      "type": "string",
+      "required": true,
+      "title": "Barra indicadora del nivel de progreso en la página",
+      "default": "Progreso de la página. Use esto para detectar la lista de secciones en este tema y si están completas. Puede saltar directamente a cualquiera que esté incompleta o que suene particularmente interesante. {{percentageComplete}}%",
+      "inputType": "Text",
+      "validators": [],
+      "translatable": true
+    },
+    "pageLevelProgressMenuBar": {
+      "type": "string",
+      "required": true,
+      "title": "Nivel de progreso de la página en la barra de menú",
+      "default": "Finalización de la página {{percentageComplete}}%",
+      "inputType": "Text",
+      "validators": [],
+      "translatable": true
+    },
+    "pageLevelProgressEnd": {
+      "type": "string",
+      "required": true,
+      "title": "Nivel final de progreso de la página",
+      "default": "Ha llegado al final de la lista de secciones de la página.",
+      "inputType": "Text",
+      "validators": [],
+      "translatable": true
+    },
+    "optionalContent": {
+      "type": "string",
+      "required": true,
+      "title": "Contenido opcional",
+      "default": "Contenido opcional",
+      "inputType": "Text",
+      "validators": [],
+      "translatable": true
+    },
+    "_navOrder": {
+      "type": "number",
+      "required": true,
+      "title": "Orden de navegación",
+      "default": 0,
+      "inputType": "Text",
+      "validators": []
+    }
+  },
+  "properties": {
+    "pluginLocations": {
+      "type": "object",
+      "required": true,
+      "properties": {
+        "config": {
+          "type": "object"
+        },
+        "course": {
+          "type": "object",
+          "properties": {
+            "_pageLevelProgress": {
+              "type": "object",
+              "required": false,
+              "legend": "Nivel de progreso de la página",
+              "properties": {
+                "_isEnabled": {
+                  "type": "boolean",
+                  "required": true,
+                  "default": true,
+                  "title": "¿Activar?",
+                  "inputType": "Checkbox",
+                  "validators": [],
+                  "help": "Controla si la extensión Progreso de nivel de página está habilitada o deshabilitada."
+                },
+                "_showPageCompletion": {
+                  "type": "boolean",
+                  "required": true,
+                  "default": true,
+                  "title": "Mostrar finalización de página",
+                  "inputType": "Checkbox",
+                  "validators": [],
+                  "help": "Controla si los cálculos de progreso se basan en todos los componentes, o solo en aquellos que están configurados para mostrarse en Progreso de nivel de página."
+                },
+                "_isCompletionIndicatorEnabled": {
+                  "type": "boolean",
+                  "required": true,
+                  "default": false,
+                  "title": "Mostrar el indicador de finalización de curso",
+                  "inputType": "Checkbox",
+                  "validators": [],
+                  "help": "Controla si el indicador de finalización se muestra junto al título del curso."
+                },
+                "_isShownInNavigationBar": {
+                  "type": "boolean",
+                  "required": true,
+                  "default": true,
+                  "title": "Mostrar progreso en la barra de navegación",
+                  "inputType": "Checkbox",
+                  "validators": [],
+                  "help": "Controla si el indicador de finalización se muestra en la barra de navegación"
+                }
+              }
+            }
+          }
+        },
+        "contentobject": {
+          "type": "object",
+          "properties": {
+            "_pageLevelProgress": {
+              "type": "object",
+              "required": false,
+              "legend": "Nivel de progreso de la página",
+              "properties": {
+                "_isEnabled": {
+                  "type": "boolean",
+                  "required": true,
+                  "default": true,
+                  "title": "¿Activar?",
+                  "inputType": "Checkbox",
+                  "validators": [],
+                  "help": "Controla si la extensión Progreso de nivel de página está habilitada o deshabilitada para esta página."
+                },
+                "_showPageCompletion": {
+                  "type": "boolean",
+                  "required": true,
+                  "default": true,
+                  "title": "Mostrar finalización de página",
+                  "inputType": "Checkbox",
+                  "validators": [],
+                  "help": "Controla si los cálculos de progreso de esta página se basan en todos los componentes y en la página general, o solo en los componentes que están configurados para mostrarse en Progreso de nivel de página."
+                },
+                "_isCompletionIndicatorEnabled": {
+                  "type": "boolean",
+                  "required": true,
+                  "default": false,
+                  "title": "Mostrar indicador de finalización de página",
+                  "inputType": "Checkbox",
+                  "validators": [],
+                  "help": "Controla si el indicador de finalización se muestra junto al título de la página."
+                },
+                "_excludeAssessments": {
+                  "type": "boolean",
+                  "required": false,
+                  "default": false,
+                  "title": "Excluir evaluaciones.",
+                  "inputType": "Checkbox",
+                  "validators": [],
+                  "help": "Controla si los cálculos de progreso incluirán evaluaciones."
+                }
+              }
+            }
+          }
+        },
+        "article": {
+          "type": "object",
+          "properties": {
+            "_pageLevelProgress": {
+              "type": "object",
+              "required": false,
+              "legend": "Nivel de progreso de la página",
+              "properties": {
+                "_isEnabled": {
+                  "type": "boolean",
+                  "required": true,
+                  "default": false,
+                  "title": "¿Activar?",
+                  "inputType": "Checkbox",
+                  "validators": [],
+                  "help": "Controla si la extensión Progreso de nivel de página se usa en este artículo."
+                },
+                "_isCompletionIndicatorEnabled": {
+                  "type": "boolean",
+                  "required": true,
+                  "default": false,
+                  "title": "Mostrar indicador de finalización del artículo",
+                  "inputType": "Checkbox",
+                  "validators": [],
+                  "help": "Controla si el indicador de finalización se muestra junto al título del artículo."
+                }
+              }
+            }
+          }
+        },
+        "block": {
+          "type": "object",
+          "properties": {
+            "_pageLevelProgress": {
+              "type": "object",
+              "required": false,
+              "legend": "Nivel de progreso de la página",
+              "properties": {
+                "_isEnabled": {
+                  "type": "boolean",
+                  "required": true,
+                  "default": false,
+                  "title": "¿Activar?",
+                  "inputType": "Checkbox",
+                  "validators": [],
+                  "help": "Controla si la extensión Progreso de nivel de página se usa en este bloque."
+                },
+                "_isCompletionIndicatorEnabled": {
+                  "type": "boolean",
+                  "required": true,
+                  "default": false,
+                  "title": "Mostrar indicador de finalización de bloque",
+                  "inputType": "Checkbox",
+                  "validators": [],
+                  "help": "Controla si el indicador de finalización se muestra junto al título del bloque."
+                }
+              }
+            }
+          }
+        },
+        "component": {
+          "type": "object",
+          "properties": {
+            "_pageLevelProgress": {
+              "type": "object",
+              "required": false,
+              "legend": "Nivel de progreso de la página",
+              "properties": {
+                "_isEnabled": {
+                  "type": "boolean",
+                  "required": true,
+                  "default": true,
+                  "title": "¿Activar?",
+                  "inputType": "Checkbox",
+                  "validators": [],
+                  "help": "Controla si este componente debe mostrarse en la extensión Progreso de nivel de página o no."
+                },
+                "_isCompletionIndicatorEnabled": {
+                  "type": "boolean",
+                  "required": true,
+                  "default": false,
+                  "title": "Mostrar indicador de finalización del componente",
+                  "inputType": "Checkbox",
+                  "validators": [],
+                  "help": "Controla si el indicador de finalización se muestra junto al título del componente."
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
