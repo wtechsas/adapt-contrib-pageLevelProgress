@@ -96,10 +96,10 @@
                   "type": "boolean",
                   "required": true,
                   "default": false,
-                  "title": "Mostrar el indicador de finalización de curso",
+                  "title": "Mostrar el indicador de finalización de Recurso",
                   "inputType": "Checkbox",
                   "validators": [],
-                  "help": "Controla si el indicador de finalización se muestra junto al título del curso."
+                  "help": "Controla si el indicador de finalización se muestra junto al título del Recurso."
                 },
                 "_isShownInNavigationBar": {
                   "type": "boolean",
